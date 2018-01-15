@@ -14,12 +14,8 @@ display: block;
 
 @media screen and (max-width:400px) {
 
-.verticalscroll{
-width: 100%;
-display: block;
-}
 
-.horizontalscroll{
+.horizontalscroll {
 height: 100%;
 display: none;
 }
@@ -30,20 +26,22 @@ body {
   height: 100vh;
   margin: 0;
   padding: 0;
-  background: #22bb00;
+  background: linear-gradient(to right, #007000, #22bb00);
   font-family: Arial;
   overflow: hidden;
   padding: 0 10%;
 }
 #head {
+  text-shadow: 2px 2px #444;
   text-align: center;
-  margin: 60px auto 150px;
+  margin: 70px auto 130px;
   color: #eee;
   font-size: 45px;
   font-family: 'Lucida Sans Unicode', sans-serif;
 }
 
 #line {
+  box-shadow: 0 5px 9px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   height: 20px;
   width: 70%;
   background: #eee;
@@ -55,8 +53,8 @@ body {
 
 #activeLine {
   width: 0;
-  height: 17px;
-  background: black;
+  height: 18px;
+  background: linear-gradient(#555, black);
   border: 1px white solid;
   border-radius: 5px;
   top: 50%;
@@ -74,6 +72,7 @@ body {
   top: -17px;
   border: 3px solid #eee;
   cursor: pointer;
+  transition: background 0.4s;
 }
 .circle:hover {
   background: #e97162;
@@ -94,7 +93,10 @@ body {
     text-align: center;
     padding: 5px 0;
     border-radius: 6px;
- 
+    opacity: 0;
+    transition: visibility 0.4s; 
+    animation: fadeout 0.4s;
+
     /* Position the tooltip text - see examples below! */
     position: absolute;
     bottom: 100%;
@@ -103,7 +105,19 @@ body {
 
 /* Show the tooltip text when you mouse over the tooltip container */
 .tooltip:hover .tooltiptext {
+    opacity: 1;
     visibility: visible;
+    animation: fadein 0.4s;
+}
+  
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
 }
 
 #responsive {
@@ -158,6 +172,7 @@ body {
     /* border-bottom: 1px #eee solid; */
     color: #eee;
     padding: 10px;
+    transition: background 0.4s;
   }
 
   .responsiveElement:hover {

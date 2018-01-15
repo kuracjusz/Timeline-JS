@@ -3,7 +3,7 @@
 var startLine = '6/1/2015';
 var endLine = '6/30/2015';
 
-var currentDate = '6/10/2015';
+var currentDate = '6/9/2015';
 
 var timeLineData = [
   ['6/2/2015', 'Lorem ipsum dolor sit', '<i class="medium material-icons icons">place</i>'],
